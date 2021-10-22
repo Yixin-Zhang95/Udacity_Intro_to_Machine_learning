@@ -19,3 +19,16 @@ import joblib
 
 enron_data = joblib.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
+for key, value in enron_data.items():
+    #print value
+    print(key, [item for item in value if item])
+    break
+
+count = 0  
+for value in enron_data.values():
+    if value['poi'] == 1:
+        count += 1
+print('there are {} POIs in the dataset'.format(count))
+
+
+print(enron_data['PRENTICE JAMES']['total_stock_value'])
